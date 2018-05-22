@@ -19,4 +19,11 @@ class GuidesActivityActivityTest {
             appliesCorrectTitle
         }
     }
+
+    @Test
+    fun screen_should_include_guides_recycler() {
+        guidesScreen {
+            containsGuidesRecycler
+        }
+    }
 }
