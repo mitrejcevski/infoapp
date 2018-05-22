@@ -21,6 +21,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors {
+        mock {
+            flavorDimensions "default"
+        }
+        prod {
+            flavorDimensions "default"
+        }
+    }
+
+    //remove MockRelease build type as not required
+    android.variantFilter { variant ->
+        if (variant.buildType.name == 'release' && variant.getFlavors().get(0).name == 'mock') {
+            variant.setIgnore(true)
+        }
+    }
 }
 
 dependencies {
