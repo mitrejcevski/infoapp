@@ -26,4 +26,13 @@ class GuidesActivityActivityTest {
             containsGuidesRecycler
         }
     }
+
+    @Test
+    fun recycler_should_display_items_info() {
+        guidesScreen {
+            guidesRecycler {
+                hasOnFirstPosition("name 1", "city 1, state 1", "endDate 1")
+            }
+        }
+    }
 }

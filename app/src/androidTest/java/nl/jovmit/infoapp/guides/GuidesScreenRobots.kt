@@ -2,8 +2,7 @@ package nl.jovmit.infoapp.guides
 
 import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
-import android.support.test.espresso.matcher.ViewMatchers.withId
+import android.support.test.espresso.matcher.ViewMatchers.*
 import nl.jovmit.infoapp.R
 import nl.jovmit.infoapp.toolbarWithTitle
 
@@ -18,4 +17,17 @@ class GuidesScreenRobot {
 
     val containsGuidesRecycler =
             onView(withId(R.id.guidesRecycler)).check(matches(isDisplayed()))
+
+    fun guidesRecycler(block: GuidesRecyclerRobot.() -> Unit): GuidesRecyclerRobot {
+        return GuidesRecyclerRobot().apply(block)
+    }
+}
+
+class GuidesRecyclerRobot {
+
+    fun hasOnFirstPosition(title: String, venue: String, endDate: String) {
+        onView(withText(title)).check(matches(isDisplayed()))
+        onView(withText(venue)).check(matches(isDisplayed()))
+        onView(withText(endDate)).check(matches(isDisplayed()))
+    }
 }
