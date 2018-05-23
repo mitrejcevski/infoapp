@@ -16,7 +16,7 @@ import nl.jovmit.infoapp.guides.data.Success
 class GuidesActivity : AppCompatActivity() {
 
     private val guidesAdapter = GuidesAdapter()
-    private val guidesViewModel by lazy { GuidesViewModel() }
+    private val guidesViewModel by lazy { createGuidesViewModel(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
