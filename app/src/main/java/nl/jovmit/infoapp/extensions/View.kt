@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import com.squareup.picasso.Picasso
 import nl.jovmit.infoapp.R
 
 fun SwipeRefreshLayout.setupDefaultColorScheme() =
@@ -16,6 +17,6 @@ fun ViewGroup.inflate(@LayoutRes layoutResource: Int): View =
 
 fun ImageView.setImageUrl(imageUrl: String) {
     if (imageUrl.isNotBlank()) {
-        //TODO load image
+        Picasso.get().load(imageUrl).into(this)
     }
 }
