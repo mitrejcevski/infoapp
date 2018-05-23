@@ -9,7 +9,7 @@ import nl.jovmit.infoapp.guides.data.GuidesResult
 import nl.jovmit.infoapp.guides.data.Success
 import nl.jovmit.infoapp.guides.data.Venue
 
-class GuidesViewModel : ViewModel() {
+class GuidesViewModel(val repository: GuidesRepository) : ViewModel() {
 
     private val triggerLiveData = MutableLiveData<Long>()
 
