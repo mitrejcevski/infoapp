@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Info App</string>
     <string name="guides">Guides</string>
+    <string name="unknownVenueLabel">To be announced</string>
 </resources>
